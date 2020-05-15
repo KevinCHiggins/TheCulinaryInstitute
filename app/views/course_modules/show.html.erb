@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @course_module.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @course_module.description %>
+</p>
+
+<p>
+  <strong>Credits:</strong>
+  <%= @course_module.credits %>
+</p>
+
+<%= link_to 'Edit', edit_course_module_path(@course_module) %> |
+<%= link_to 'Back', course_modules_path %>
