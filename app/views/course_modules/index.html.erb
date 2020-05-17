@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Course Modules</h1>
+<h2>Modules</h2>
 
 <table>
   <thead>
@@ -18,9 +18,9 @@
         <td><%= course_module.name %></td>
         <td><%= course_module.description %></td>
         <td><%= course_module.credits %></td>
-        <td><%= link_to 'Show', course_module %></td>
-        <td><%= link_to 'Edit', edit_course_module_path(course_module) %></td>
-        <td><%= link_to 'Destroy', course_module, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'View', course_module %></td>
+        <td><%= link_to 'Update', edit_course_module_path(course_module) %></td>
+        <td><%= link_to 'Delete', course_module, method: :delete, data: { confirm: 'Do you wish to permanently delete this module?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Course Module', new_course_module_path %>
+<%= link_to 'New module', new_course_module_path %>

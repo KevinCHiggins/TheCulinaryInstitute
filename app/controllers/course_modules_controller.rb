@@ -1,5 +1,6 @@
 class CourseModulesController < ApplicationController
   before_action :set_course_module, only: [:show, :edit, :update, :destroy]
+  before_action :authorise, only: [:edit, :update, :destroy]
 
   # GET /course_modules
   # GET /course_modules.json
@@ -28,11 +29,11 @@ class CourseModulesController < ApplicationController
 
     respond_to do |format|
       if @course_module.save
-        format.html { redirect_to @course_module, notice: 'Course module was successfully created.' }
-        format.json { render :show, status: :created, location: @course_module }
+        format.html { redirect_to @course_module, notice: 'Module was successfully created.' }
+        #format.json { render :show, status: :created, location: @course_module }
       else
         format.html { render :new }
-        format.json { render json: @course_module.errors, status: :unprocessable_entity }
+        #format.json { render json: @course_module.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -42,11 +43,11 @@ class CourseModulesController < ApplicationController
   def update
     respond_to do |format|
       if @course_module.update(course_module_params)
-        format.html { redirect_to @course_module, notice: 'Course module was successfully updated.' }
-        format.json { render :show, status: :ok, location: @course_module }
+        format.html { redirect_to @course_module, notice: 'Module was successfully updated.' }
+        #format.json { render :show, status: :ok, location: @course_module }
       else
         format.html { render :edit }
-        format.json { render json: @course_module.errors, status: :unprocessable_entity }
+        #format.json { render json: @course_module.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -56,8 +57,8 @@ class CourseModulesController < ApplicationController
   def destroy
     @course_module.destroy
     respond_to do |format|
-      format.html { redirect_to course_modules_url, notice: 'Course module was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to course_modules_url, notice: 'Module was successfully deleted.' }
+      #format.json { head :no_content }
     end
   end
 

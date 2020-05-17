@@ -11,8 +11,17 @@
 </p>
 
 <p>
+  <strong>Module:</strong>
+  <%= @student.course_module.name %>
+</p>
+
+<p>
   <strong>Paid:</strong>
-  <%= @student.paid %>
+	  <% if @student.paid %>
+	    <%= 'Yes' %>
+	  <% else %>
+	    <%= 'No' %>
+	  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |

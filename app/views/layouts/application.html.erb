@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Culinary</title>
+    <title>The Culinary Institute</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+    
   <body>
     <header>
         <nav>         
           <%= link_to 'Students', students_path, :class => 'top-link' %> 
           <%= link_to 'Modules', course_modules_path, :class => 'top-link' %> 
-        <% if true %> 
 
-          <%= link_to 'Sign Out', session_path(1), :class => 'top-link', :id => 'top-link-ender' %>
+          <% if current_user %>
+            <%= link_to 'Sign Out', signout_path, :class => 'top-link', :id => 'top-link-ender' %>
           <% else %>
-          <%= link_to 'Sign In', new_session_path, :class => 'top-link', :id => 'top-link-ender'  %>
-        <% end %>
+            <%= link_to 'Sign In', new_session_path, :class => 'top-link', :id => 'top-link-ender' %>
+          <% end %>
+
       </nav>
     </header>
-    <main>
+    <main>  
       <%= yield %>
     </main>
   </body>

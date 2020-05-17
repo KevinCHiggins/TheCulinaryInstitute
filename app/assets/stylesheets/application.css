@@ -17,10 +17,25 @@
 * {
 	box-sizing: border-box;
 }
+h1, h2 {
+
+	font-family: Calibri, arial, helvetica, sans-serif;
+	font-weight: normal;
+}
+main {
+
+}
 body {
+	background-image: url("spooncrop.jpg");
+	background-size: 700px;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center bottom;
+	font-family: "Palatino Linotype", Georgia, serif;
+	font-size: 1em;
 	width: 800px;
 	margin: auto;
-
+	text-shadow: 0px 0px 3px black, 0px 0px 3px black;
 	margin-top: 50px;
   border: solid #E6EDF2;
   color: #E6EDF2;
@@ -44,7 +59,7 @@ a:hover {
 .top-link {
 	margin-bottom: 12px;
 	font-size: 1.5em;
-	padding: 6px 8px 6px 4px;
+	padding: 6px 8px .2em 4px;
 	border-right: 3px solid;
 	border-image:
 	linear-gradient(
@@ -54,10 +69,36 @@ a:hover {
     ) 1 100%;
 }
 header {
-	padding: 4px;
+	padding: .4em;
 	border-bottom: 3px solid darkred;
+	margin-bottom: 8px;
 }
 #top-link-ender {
 	padding: 4px;
 	border-right: none;
 }
+a.inline-link {
+	color: #D2691E;
+	text-decoration: none;
+	font-family: Verdana, arial, helvetica, sans-serif;
+	font-size: 1em;
+}
+input {
+	font-family: Calibri, arial, helvetica, sans-serif;
+	font-size: 1em;
+	background-color: #E6EDF2;
+	margin: 5px 8px 8px;
+}
+input.submit-button {
+	margin: 13px 8px 13px;
+}
+select {	
+	font-family: Calibri, arial, helvetica, sans-serif;
+	font-size: 1em;
+	background-color: #E6EDF2;
+	margin: 5px 8px 8px;
+}
+.signin-flash {
+	margin: 13px 0px;
+	font-family: Calibri, arial, helvetica, sans-serif;
+	color: red; }

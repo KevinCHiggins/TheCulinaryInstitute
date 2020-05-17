@@ -1,0 +1,19 @@
+<p class="signin-flash"><%= notice %></p>
+<%= form_with(url: signin_path) do |form| %>
+  <p>Don't have an account yet? Click <%= link_to 'here', signup_path, :class => 'inline-link' %> to sign up.</p>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit 'Sign in', :class => 'submit-button'%>
+  </div>
+<% end %>
