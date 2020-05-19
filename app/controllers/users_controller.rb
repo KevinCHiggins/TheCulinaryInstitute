@@ -1,6 +1,9 @@
+# @author Kevin Higgins
+# this class uses some code, with modifications, from this tutorial https://gist.github.com/thebucknerlife/10090014
 class UsersController < ApplicationController
   def new
-    @user = User.new
+    @user = User.new # this object is not used in view, but exists so view can poll it in case the view has been re-rendered due to an error
+    # in which case the @user would actually be the user with errors that wasn't able to be created, built in the create method 
   end
   def create
     @user = User.new(user_params)
@@ -17,9 +20,6 @@ class UsersController < ApplicationController
     end
   end
   private
-  def set_user
-    @user = User.find(params[:id])
-  end
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end  

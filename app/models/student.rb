@@ -1,3 +1,4 @@
+# @author Kevin Higgins
 class Student < ApplicationRecord
   include ActiveModel::Validations
   belongs_to :course_module

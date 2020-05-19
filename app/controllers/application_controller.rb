@@ -1,3 +1,5 @@
+# @author Kevin Higgins
+# this class uses some code, with modifications, from this tutorial https://gist.github.com/thebucknerlife/10090014
 class ApplicationController < ActionController::Base
 
   def current_user

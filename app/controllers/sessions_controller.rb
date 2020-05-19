@@ -1,11 +1,13 @@
+# @author Kevin Higgins
+# this class uses some code, with modifications, from this tutorial https://gist.github.com/thebucknerlife/10090014
 class SessionsController < ApplicationController
   def new
 
   end
   def create
     user = User.find_by_email(params[:email])
-    puts 'User with email ' + params[:email] + ' exists ' + (user != nil).to_s
-    puts 'Password ' + params[:password].to_s + ' validates ' + (user.authenticate(params[:password])).to_s
+    #puts 'User with email ' + params[:email] + ' exists ' + (user != nil).to_s
+    #puts 'Password ' + params[:password].to_s + ' validates ' + (user.authenticate(params[:password])).to_s
     # in case of valid email and password
     if user && user.authenticate(params[:password])
 
@@ -23,6 +25,8 @@ class SessionsController < ApplicationController
     session.delete(:user_id)
     redirect_to signin_path
   end
+  private
+
   def session_params
     params.require(:session).permit(:email, :password)
   end

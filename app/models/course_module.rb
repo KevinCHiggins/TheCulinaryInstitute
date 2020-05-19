@@ -1,3 +1,4 @@
+# @author Kevin Higgins
 class CourseModule < ApplicationRecord
     has_many :students 
     validates_each :name, :description, :credits do |record, attr, value|

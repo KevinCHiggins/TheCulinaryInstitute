@@ -1,3 +1,4 @@
+<!-- @author Kevin Higgins -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -18,7 +19,7 @@
           <% if current_user %>
             <%= link_to 'Sign Out', signout_path, :class => 'top-link', :id => 'top-link-ender' %>
           <% else %>
-            <%= link_to 'Sign In', new_session_path, :class => 'top-link', :id => 'top-link-ender' %>
+            <%= link_to 'Sign In', signin_path, :class => 'top-link', :id => 'top-link-ender' %>
           <% end %>
 
       </nav>
